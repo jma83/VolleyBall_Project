@@ -1,0 +1,33 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MatchManager : Singleton<MatchManager>
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void IncreasePoint()
+    {
+
+    }
+
+    void DecreasePoint()
+    {
+
+    }
+
+    void CheckWin()
+    {
+
+    }
+}
