@@ -39,7 +39,7 @@ public class PlayerCollider : MonoBehaviour
 
     Vector3 GetReflected(Vector3 volleyBallPos)
     {
-        Vector3 v3 = new Vector3(2, 3, 0);
+        Vector3 v3 = new Vector3(2.6f, 0.05f, 0);
         Vector3 volleyballVector = transform.position - volleyBallPos;
         Vector3 planeTangent = Vector3.Cross(volleyballVector, v3);
         Vector3 planeNormal = Vector3.Cross(planeTangent, volleyballVector);
@@ -59,7 +59,7 @@ public class PlayerCollider : MonoBehaviour
 
 
             Debug.Log("Player HIT!: " + reflect);
-            other.GetComponent<Rigidbody>().AddForce(reflect, ForceMode.Impulse);
+            other.GetComponent<Rigidbody>().AddForce(reflect, ForceMode.VelocityChange);
 
 
 

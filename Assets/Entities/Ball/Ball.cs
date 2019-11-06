@@ -25,7 +25,7 @@ public class Ball : MonoBehaviour
         //Debug.Log(targetTime);
     }
 
-    private void ResetPosition()
+    public void ResetPosition()
     {
         if (rigidBody != null)
         {

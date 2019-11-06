@@ -112,26 +112,6 @@ public class Player : MonoBehaviour
         return (grounded1 || grounded2 || grounded3 || grounded4);
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Ball"))
-        {
-            // Increase our score
-            //
-            
-
-                Debug.Log("Player_front2: " + other.transform.position.y);
-                //rb.AddForce(new Vector3(-gameObject.GetComponent<Rigidbody>().velocity.magnitude / 3, 18.5f, Random.Range(-0.75f, 0.75f)), ForceMode.VelocityChange);
-
-            
-
-            // Play sound
-
-            // Destroy coin
-            // Destroy(other.gameObject);
-        }
-        
-    }
 
     public Vector3 GetSize()
     {
