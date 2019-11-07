@@ -27,6 +27,11 @@ public class Player : MonoBehaviour
     //size of the player
     Vector3 size;
 
+    float hAxis;
+    float vAxis;
+    float jAxis;
+    public int playerID;
+
     // Use this for initialization
     void Start()
     {
@@ -36,6 +41,9 @@ public class Player : MonoBehaviour
 
         // get player size
         size = col.bounds.size;
+
+        
+
     }
 
     // Update is called once per frame
@@ -45,15 +53,29 @@ public class Player : MonoBehaviour
         JumpHandler();
     }
 
+
+    public void CheckMovementInput()
+    {      
+        // Input on x (Horizontal)
+        hAxis = Input.GetAxis("PJ"+ playerID + "_Horizontal");
+
+        // Input on z (Vertical)
+        vAxis = Input.GetAxis("PJ"+ playerID + "_Vertical");
+       
+    }
+
+    public void CheckJumpInput()
+    {
+
+        // Input on z (Vertical)
+        jAxis = Input.GetAxis("PJ"+ playerID + "_Jump");
+        
+    }
     // Takes care of the walking logic
     void WalkHandler()
     {
-        // Input on x (Horizontal)
-        float hAxis = Input.GetAxis("Horizontal");
 
-        // Input on z (Vertical)
-        float vAxis = Input.GetAxis("Vertical");
-
+        CheckMovementInput();
         // Movement vector
         Vector3 movement = new Vector3(hAxis * walkSpeed * Time.deltaTime, 0, vAxis * walkSpeed * Time.deltaTime);
 
@@ -68,7 +90,7 @@ public class Player : MonoBehaviour
     void JumpHandler()
     {
         // Input on the Jump axis
-        float jAxis = Input.GetAxis("Jump");
+        CheckJumpInput();
 
         // If the key has been pressed
         if (jAxis > 0)

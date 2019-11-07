@@ -7,7 +7,8 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] private Player currentPlayer;
     bool spawned = false;
-
+    
+    
     private void Start()
     {
         if (spawned == false)
@@ -72,4 +73,6 @@ public class GameManager : Singleton<GameManager>
        //load scores
 
     }
+
+    
 }
