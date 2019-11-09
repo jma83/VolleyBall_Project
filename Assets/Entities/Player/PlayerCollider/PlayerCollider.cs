@@ -23,9 +23,9 @@ public class PlayerCollider : MonoBehaviour
         Vector3 v3 = new Vector3(0, 0, 0);
         if (ply != null) {
             if (ply.playerID == 1)
-                v3 = new Vector3(-2.6f, 0.05f, 0);
+                v3 = new Vector3(-2.7f, 0.15f, 0);
             else
-                v3 = new Vector3(2.6f, 0.05f, 0);
+                v3 = new Vector3(2.7f, 0.15f, 0);
         }
         Vector3 volleyballVector = transform.position - volleyBallPos;
         Vector3 planeTangent = Vector3.Cross(volleyballVector, v3);

@@ -7,6 +7,7 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] private Player currentPlayer;
     bool spawned = false;
+    bool paused;
     
     
     private void Start()
@@ -14,6 +15,7 @@ public class GameManager : Singleton<GameManager>
         if (spawned == false)
         {
             spawned = true;
+            paused = true;
             DontDestroyOnLoad(gameObject);
            
         }
@@ -34,6 +36,16 @@ public class GameManager : Singleton<GameManager>
     private void OnApplicationQuit()
     {
         Save();
+    }
+
+    public void SetPausedGame(bool v)
+    {
+        paused = v;
+    }
+
+    public bool GetPausedGame()
+    {
+        return paused;
     }
 
     private void OnApplicationPause(bool pause)

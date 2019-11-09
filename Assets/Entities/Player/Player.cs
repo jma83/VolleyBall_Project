@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     //size of the player
     Vector3 size;
 
+    Vector3 initPos;
+
     float hAxis;
     float vAxis;
     float jAxis;
@@ -41,6 +43,8 @@ public class Player : MonoBehaviour
 
         // get player size
         size = col.bounds.size;
+
+        initPos = transform.position;
 
         
 
@@ -138,5 +142,16 @@ public class Player : MonoBehaviour
     public Vector3 GetSize()
     {
         return size;
+    }
+
+    public void ResetPosition()
+    {
+        transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+        transform.position = initPos;
+    }
+
+    public Vector3 GetInitPosition()
+    {
+        return initPos;
     }
 }
